@@ -12,6 +12,9 @@ import com.yly.databinding.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mBinding: ActivityMainBinding
+    private val testModel by lazy {
+        ObservableModel()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,9 +22,11 @@ class MainActivity : AppCompatActivity() {
         mBinding.orderType = 2
         mBinding.getOrderType.setOnClickListener {
             //            println(mBinding.orderType)
-            println(mBinding.mRating)
+//            println(mBinding.mRating)
+            testModel.name = "haha"
         }
 
         mBinding.mRating = 2F
+        mBinding.model = testModel
     }
 }
